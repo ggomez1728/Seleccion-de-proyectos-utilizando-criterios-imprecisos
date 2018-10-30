@@ -7,7 +7,7 @@
 % ---------------------------------------------------------
 % Autor y Programador de esta funcion: GERMAN A. GOMEZ V.
 % Fecha de realizacion: 16-10-2018.
-% Version: primera (original).
+% Version: 1.0 (original).
 % ---------------------------------------------------------
 
 clear all % Deja vacio (limpia) el espacio de trabajo de MATLAB
