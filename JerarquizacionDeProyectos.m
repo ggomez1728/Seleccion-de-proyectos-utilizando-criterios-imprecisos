@@ -1,4 +1,4 @@
-function [ranking, nombreDeProyectos]  = JerarquizacionDeProyectos(itemsPorNumero, proyectosInvalidos, MDNP, nombreDeProyectos)
+function [cercaniaRelativa]  = JerarquizacionDeProyectos(itemsPorNumero, proyectosInvalidos, MDNP)
     
 % f.1) Establecer puntos de comparacion:
 
@@ -33,16 +33,6 @@ function [ranking, nombreDeProyectos]  = JerarquizacionDeProyectos(itemsPorNumer
 cercaniaRelativa = relative_closeness(dGSI, dGSNI);
 
 
-% Descartamos los proyectos que no cumplieron con e)
-
-[cercaniaRelativa, nombreDeProyectos] = remove_invalid_projects(proyectosInvalidos, cercaniaRelativa, nombreDeProyectos);
-
-% cercaniaRelativa
-% - Ordenar las ideas de acuerdo a las medidas globales de distancia
-% Se dara prioridad al proyecto que tenga el valos de cercania
-% relativa mas cercano a uno (1).
-
-[ranking, nombreDeProyectos] = bubble_sort(cercaniaRelativa, nombreDeProyectos);
    
 
 end

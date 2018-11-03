@@ -142,7 +142,7 @@ proyectosInvalidos = CribaPrevia(menorQuePremisas, similarityValues, itemsPorNum
 % f) Ordenar jerárquicamente las ideas examinadas, con base
 % en medidas ponderadas y agregadas obtenidas previamente
 
-[ranking, nombreDeProyectos]  = JerarquizacionDeProyectos(itemsPorNumero, proyectosInvalidos, MDNP, nombreDeProyectos);
+cercaniaRelativa  = JerarquizacionDeProyectos(itemsPorNumero, proyectosInvalidos, MDNP);
 
 % g) Seleccionar la mejor proyecto
 %
@@ -155,7 +155,10 @@ proyectosInvalidos = CribaPrevia(menorQuePremisas, similarityValues, itemsPorNum
 
 %[y, mejorAlternativa] = min(cercaniaRelativa);
 
-% h) Presentar los resultados obtenidos
+
+[ranking, nombreDeProyectos]  = eleccionDeMejoresProyectosAplicandoRestricciones(cercaniaRelativa, proyectosInvalidos, nombreDeProyectos);
+
+% Extra: Presentar los resultados obtenidos
 
 imprimirResultados(nombreDeProyectos, ranking)
     
